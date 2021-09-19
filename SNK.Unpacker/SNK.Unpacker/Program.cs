@@ -32,12 +32,6 @@ namespace SNK.Unpacker
             String m_Input = args[0];
             String m_Output = Utils.iCheckArgumentsPath(args[1]);
 
-            if (!File.Exists("SNK.LZ4.dll"))
-            {
-                Utils.iSetError("[ERROR]: SNK.LZ4.dll module not found!");
-                return;
-            }
-
             if (!File.Exists(m_Input))
             {
                 Utils.iSetError("[ERROR]: Input file -> " + m_Input + " <- does not exist!");

@@ -114,8 +114,7 @@ namespace SNK.Unpacker
                             if (m_Entry.dwFlag == WadEncFlags.ENCRYPTED_COMPRESSED)
                             {
                                 Int32 dwDecompressedSize = BitConverter.ToInt32(lpScrBuffer, lpScrBuffer.Length - 8);
-                                Byte[] lpDstBuffer = new Byte[dwDecompressedSize];
-                                lpDstBuffer = WadCompression.iDecompress(lpScrBuffer, lpDstBuffer, dwDecompressedSize);
+                                var lpDstBuffer = WadCompression.iDecompress(lpScrBuffer, dwDecompressedSize);
 
                                 File.WriteAllBytes(m_FullPath, lpDstBuffer);
                             }
